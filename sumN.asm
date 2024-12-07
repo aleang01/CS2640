@@ -21,19 +21,27 @@ main:
 
 sumN:
 
+	addi $sp, $sp, -8	# Save space for 2 registers
+	sw $a0, 4($sp)
+	sw $ra, 0($sp)
+
 	# Check if n = 0, and branch to base case if so
 	beqz $a0, equalsZero
 	
 	addi $a0, $a0, -1
 	jal sumN
-	
-	add $v0, $v0, $a0
+
+	lw $a0, 4($sp)
+	lw $ra, 0($sp)
 	
 	jr $ra
 
 equalsZero:
 
 	move $v0, $zero
+	
+	lw $ra, 0($sp)
+	addi $sp, $sp, 8
 	jr $ra
 
 End:
