@@ -27,19 +27,19 @@ evenIndices:
 	
 	la $a1, ($v0)	# Store address of $a0 in $v0
 	
-	lw $t1, 4($t0)	# Get 2nd value in input arr
+	lw $t1, 0($t0)	# Get 2nd value in input arr
 	sw $t1, ($a1)
 	addi $a1, $a1, 4 # Move to next space in $a1
 	
-	lw $t1, 12($t0)	# Get 4th value in input arr
+	lw $t1, 8($t0)	# Get 4th value in input arr
 	sw $t1, ($a1)
 	addi $a1, $a1, 4 # Move to next space in $a1
 
-	lw $t1, 20($t0)	# Get 4th value in input arr
+	lw $t1, 16($t0)	# Get 4th value in input arr
 	sw $t1, ($a1)
 	addi $a1, $a1, 4 # Move to next space in $a1
 	
-	lw $t1, 28($t0)	# Get 4th value in input arr
+	lw $t1, 24($t0)	# Get 4th value in input arr
 	sw $t1, ($a1)
 	addi $a1, $a1, 4 # Move to next space in $a1	
 	jr $ra
